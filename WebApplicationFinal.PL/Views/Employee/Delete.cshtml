@@ -1,0 +1,13 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Are You Sure to Delete This Employee?</h1>
+<form asp-action="Delete">
+    <div asp-validation-summary="ModelOnly"></div> @*if error thrown from catch of delete controller make it appear in the top with model errors all with each other but here no model error because no input*@
+    <partial name="PartialViews/DetailsDeleteEmployeePartial" />
+    <input type="hidden" asp-for="ImageName"/>
+    <input type="submit" value="Delete" class="btn btn-danger"/>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

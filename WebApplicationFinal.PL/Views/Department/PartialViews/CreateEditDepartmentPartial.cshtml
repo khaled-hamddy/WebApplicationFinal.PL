@@ -1,0 +1,21 @@
+﻿@model DepartmentViewModel
+
+
+<div class="form-group">
+    @*        <label class="col-form-label" for="code">Code</label> instead of this we use asp for *@
+    <label class="col-form-label" asp-for="code"></label>
+    @*        <input type="text" name="code" id="code" class="form-control" /> instead of this we use asp for and it know its type from model
+    *@
+    <input asp-for="code" class="form-control" />
+    <span asp-validation-for="code" class="text-danger"></span> @*it take error message from dep model in case validation of model doesnt match input in form*@
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="name"></label>
+    <input asp-for="name" class="form-control" />
+    <span asp-validation-for="name" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="DateOfCreation"></label>
+    <input asp-for="DateOfCreation" class="form-control" />
+</div>
+<br />

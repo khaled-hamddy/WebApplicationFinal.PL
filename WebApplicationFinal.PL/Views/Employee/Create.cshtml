@@ -1,0 +1,24 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Employee</h1>
+
+<br/>
+<br/>
+
+@*<form action="/Employee/Create" method="post"> instead of this we use asp action =create which translated to this
+*@ 
+<form asp-action="Create" enctype="multipart/form-data">
+    @*if form has inputs of type file enctype="multipart/form-data"*@
+
+    <partial name="PartialViews\CreateEditEmployeePartial" />
+    <input type="submit" value="Create" class="btn btn-primary"/> |
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial" />}
+  @*  <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*@
+
